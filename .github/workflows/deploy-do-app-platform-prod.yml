@@ -9,7 +9,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: buildjet-4vcpu-ubuntu-2204
+    runs-on: ubuntu-latest
 
     environment: prod
 
@@ -33,15 +33,15 @@ jobs:
         env:
           ENV_NAME: 'prod'
           DOCR_REPOSITORY: 'gauzy-api'
-          APP_DOMAIN: 'apida.gauzy.co'
+          APP_DOMAIN: 'hr.diviengine.com'
           INSTANCE_COUNT: '2'
           INSTANCE_SIZE: 'professional-s'
           API_HOST: '0.0.0.0'
           DEMO: 'false'
           NODE_ENV: 'production'
           ADMIN_PASSWORD_RESET: 'false'
-          API_BASE_URL: 'https://apida.gauzy.co'
-          CLIENT_BASE_URL: 'https://app.gauzy.co'
+          API_BASE_URL: 'https://hr.diviengine.com'
+          CLIENT_BASE_URL: 'https://hr.diviengine.com'
           DB_TYPE: '${{ secrets.DB_TYPE }}'
           DB_URI: '${{ secrets.DB_URI }}'
           DB_HOST: '${{ env.DB_HOST_PUBLIC }}'
